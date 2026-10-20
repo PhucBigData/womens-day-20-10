@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Vietnamese Women's Day 20/10 ❤️</title>
+  <meta name="description" content="Trang web kỷ niệm ngày Phụ Nữ Việt Nam 20/10 dành riêng cho người anh thương nhất.">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Happy 20/10 - Dành tặng người anh yêu ❤️">
+  <meta property="og:description" content="Chúc em một ngày 20/10 luôn ngập tràn niềm vui, nụ cười và hạnh phúc!">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating Canvas for Rose Petals & Floating Hearts -->
+  <canvas id="effects-canvas"></canvas>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-nav">
+    <button class="fab-btn" id="music-toggle-btn" title="Bật / Tắt giai điệu lãng mạn">
+      🎵
+    </button>
+    <button class="fab-btn" id="open-customizer-btn" title="Chỉnh sửa thông tin nhanh">
+      ⚙️
+    </button>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero container">
+      <div class="badge-2010" id="nickname-badge">
+        🌸 20/10 — Ngày Phụ Nữ Việt Nam
+      </div>
+      <h1 class="hero-title">
+        Gửi Người Con Gái Tuyệt Vời Nhất
+        <span class="receiver" id="receiver-name">Em Yêu</span>
+      </h1>
+      <p class="hero-subtitle" id="hero-subtitle">
+        Chúc em một ngày 20/10 ngập tràn niềm vui, luôn rạng rỡ như đóa hoa hướng dương và luôn hạnh phúc bên anh!
+      </p>
+      <a href="#letter-section" class="cta-button">
+        <span>Mở Bức Thư Tình 20/10</span>
+        <span>💌</span>
+      </a>
+    </section>
+
+    <!-- LOVE DAYS COUNTER -->
+    <section class="counter-section container">
+      <div class="counter-wrapper glass-card">
+        <div class="counter-header">
+          <h2>Hành Trình Yêu Thương Của Chúng Mình</h2>
+          <p>Từng giây từng phút trôi qua đều là những khoảnh khắc quý giá khi có em</p>
+        </div>
+        <div class="timer-grid">
+          <div class="timer-box">
+            <span class="timer-number" id="timer-days">0</span>
+            <span class="timer-label">Ngày</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-number" id="timer-hours">00</span>
+            <span class="timer-label">Giờ</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-number" id="timer-minutes">00</span>
+            <span class="timer-label">Phút</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-number" id="timer-seconds">00</span>
+            <span class="timer-label">Giây</span>
+          </div>
+        </div>
+        <!-- LONG DISTANCE LOVE CONNECTION -->
+        <div class="distance-connect-bar">
+          <div class="distance-route">
+            <span class="location-badge">📍 Nơi Anh</span>
+            <div class="route-line">
+              <span class="plane-icon">✈️</span>
+              <span class="pulsing-heart">❤️</span>
+            </div>
+            <span class="location-badge">📍 Nơi Em</span>
+          </div>
+          <p class="distance-quote-text" id="distance-quote">
+            "Khoảng cách địa lý chỉ là thử thách để chứng minh tình yêu của hai đứa mình to lớn và kiên định đến nhường nào."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE 3D ENVELOPE / LETTER -->
+    <section class="letter-section container" id="letter-section">
+      <span class="section-tag">A Special Letter For You</span>
+      <h2 class="section-title">Bức Thư Tình Ngày 20/10</h2>
+      <p class="section-desc">Chạm vào phong thư được niêm phong để mở ra những lời từ tận đáy lòng anh muốn gửi tới em.</p>
+
+      <div class="envelope-wrap">
+        <div class="envelope" id="envelope" title="Bấm vào để mở phong thư">
+          <div class="envelope-back"></div>
+          <div class="flap-left"></div>
+          <div class="flap-right"></div>
+          <div class="flap-bottom"></div>
+          <div class="flap-top"></div>
+          <div class="wax-seal">20/10</div>
+        </div>
+      </div>
+      <div class="envelope-prompt">
+        <span>👉 Nhấp vào phong bì phía trên để mở thư</span>
+      </div>
+
+      <!-- Letter Content (Revealed on click) -->
+      <div class="letter-paper" id="letter-paper">
+        <div class="letter-top">
+          <h3 class="letter-heading" id="letter-title">Gửi người con gái anh yêu nhất ✨</h3>
+          <span class="letter-date" id="letter-date">20/10/2026</span>
+        </div>
+        <div class="letter-body" id="letter-content">
+          <!-- Typewriter will inject content here -->
+        </div>
+        <div class="letter-signature" id="sender-signature">
+          Thương em, Anh
+        </div>
+      </div>
+    </section>
+
+    <!-- REASONS WHY I LOVE YOU -->
+    <section class="reasons-section container">
+      <span class="section-tag">Every Little Thing</span>
+      <h2 class="section-title">Những Điều Ở Em Khiến Anh Say Đắm</h2>
+      <p class="section-desc">Không chỉ riêng 20/10, mà mỗi ngày anh đều cảm thấy may mắn vì có em kề bên.</p>
+
+      <div class="reasons-grid" id="reasons-container">
+        <!-- Rendered from CONFIG.reasons -->
+      </div>
+    </section>
+
+    <!-- POLAROID MEMORIES GALLERY -->
+    <section class="gallery-section container">
+      <div style="text-align: center;">
+        <span class="section-tag">Our Sweet Memories</span>
+        <h2 class="section-title">Góc Kỷ Niệm Của Hai Đứa</h2>
+        <p class="section-desc">Từng góc phố ta qua, từng nụ cười em trao đều được lưu giữ vẹn nguyên trong tim anh.</p>
+      </div>
+
+      <div class="gallery-grid" id="gallery-container">
+        <!-- Rendered from CONFIG.memories -->
+      </div>
+    </section>
+
+    <!-- SURPRISE GIFT BOX & LOVE VOUCHERS -->
+    <section class="gift-section container">
+      <span class="section-tag">Surprise Gift</span>
+      <h2 class="section-title">Hộp Quà Bất Ngờ Dành Riêng Cho Em</h2>
+      <p class="section-desc">Một món quà đặc biệt đang chờ em mở khóa bên trong chiếc hộp bí mật!</p>
+
+      <div class="gift-box-wrapper">
+        <div class="gift-box" id="gift-box" title="Bấm vào hộp quà để mở!">
+          <div class="gift-bow"></div>
+          <div class="gift-lid"></div>
+          <div class="gift-body"></div>
+        </div>
+      </div>
+      <div>
+        <span style="font-size: 0.95rem; color: var(--primary); font-weight: 600;">🎁 Nhấp vào hộp quà để mở quà nhé!</span>
+      </div>
+
+      <div id="vouchers-section" style="display: none;">
+        <div class="vouchers-grid" id="vouchers-container">
+          <!-- Rendered from CONFIG.vouchers -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with love <span class="footer-heart">❤️</span> for Vietnamese Women's Day 20/10</p>
+      <p style="margin-top: 8px; font-size: 0.8rem; opacity: 0.75;">Chúc công chúa của anh một ngày 20/10 thật hạnh phúc!</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="modal-overlay" id="lightbox-modal">
+    <div class="modal-window">
+      <button class="modal-close" onclick="closeLightbox()">✕</button>
+      <div style="width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 16px;">
+        <img id="lightbox-img" src="" alt="Memory" style="width: 100%; display: block; border-radius: 12px;">
+      </div>
+      <h3 id="lightbox-title" style="font-family: var(--font-serif); color: var(--primary-deep); margin-bottom: 8px;"></h3>
+      <p id="lightbox-desc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;"></p>
+    </div>
+  </div>
+
+  <!-- QUICK CUSTOMIZER MODAL -->
+  <div class="modal-overlay" id="customizer-modal">
+    <div class="modal-window">
+      <button class="modal-close" id="close-customizer-btn">✕</button>
+      <h3 style="font-family: var(--font-serif); color: var(--primary-deep); margin-bottom: 16px; font-size: 1.35rem;">
+        ⚙️ Chỉnh Sửa Thông Tin Nhanh
+      </h3>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+        Nhập thông tin người yêu của bạn để website cập nhật ngay tức thì.
+      </p>
+
+      <div class="form-group">
+        <label for="edit-receiver-name">Tên hiển thị người yêu (VD: Thảo Vy, Linh Nhi, Em Yêu):</label>
+        <input type="text" id="edit-receiver-name" placeholder="VD: Bé Thảo">
+      </div>
+
+      <div class="form-group">
+        <label for="edit-nickname">Biệt danh thân mật:</label>
+        <input type="text" id="edit-nickname" placeholder="VD: Công Chúa Nhỏ, Mèo Béo">
+      </div>
+
+      <div class="form-group">
+        <label for="edit-sender-name">Tên hoặc xưng hô của bạn (Người gửi):</label>
+        <input type="text" id="edit-sender-name" placeholder="VD: Anh Phúc">
+      </div>
+
+      <div class="form-group">
+        <label for="edit-start-date">Ngày bắt đầu yêu nhau:</label>
+        <input type="date" id="edit-start-date">
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 24px;">
+        <button id="save-customizer-btn" style="flex: 1; background: var(--primary); color: #fff; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer;">
+          Lưu & Xem Thử Ngay ✨
+        </button>
+        <button id="export-config-btn" style="background: #f7ebe8; color: var(--primary-deep); border: 1px solid var(--primary-light); padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer;" title="Tải về file config.js để lưu vĩnh viễn">
+          Tải config.js 📥
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
