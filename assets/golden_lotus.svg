@@ -1,0 +1,199 @@
+<svg class="golden-lotus-svg" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 24K Luxury Gold Metallic Gradients -->
+    <linearGradient id="goldStem" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8a5a00"/>
+      <stop offset="35%" stop-color="#ffd700"/>
+      <stop offset="65%" stop-color="#fff2a3"/>
+      <stop offset="100%" stop-color="#a67400"/>
+    </linearGradient>
+
+    <radialGradient id="goldPetalBright" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#fff1a8"/>
+      <stop offset="60%" stop-color="#e6b800"/>
+      <stop offset="100%" stop-color="#996f00"/>
+    </radialGradient>
+
+    <radialGradient id="goldPetalDeep" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fff6cc"/>
+      <stop offset="40%" stop-color="#cca000"/>
+      <stop offset="80%" stop-color="#8c6200"/>
+      <stop offset="100%" stop-color="#593b00"/>
+    </radialGradient>
+
+    <linearGradient id="goldLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8db"/>
+      <stop offset="25%" stop-color="#ffd700"/>
+      <stop offset="70%" stop-color="#b8860b"/>
+      <stop offset="100%" stop-color="#664600"/>
+    </linearGradient>
+
+    <linearGradient id="crystalFacet1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.95)"/>
+      <stop offset="50%" stop-color="rgba(255, 235, 170, 0.5)"/>
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)"/>
+    </linearGradient>
+    <linearGradient id="crystalFacet2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.8)"/>
+      <stop offset="60%" stop-color="rgba(210, 180, 100, 0.4)"/>
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.3)"/>
+    </linearGradient>
+
+    <filter id="royalGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="goldShine" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Radiant Golden Aura Background -->
+  <circle cx="200" cy="220" r="160" fill="rgba(255, 215, 0, 0.08)" filter="url(#royalGlow)"/>
+  <circle cx="200" cy="180" r="110" fill="rgba(255, 230, 120, 0.12)" filter="url(#royalGlow)"/>
+
+  <!-- ========================================== -->
+  <!-- 1. STEMS (CÀNH SEN VÀNG)                  -->
+  <!-- ========================================== -->
+  <g filter="url(#goldShine)">
+    <!-- Main stem to top flower -->
+    <path d="M200,430 Q198,280 200,120" stroke="url(#goldStem)" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <!-- Stem to mid flower -->
+    <path d="M200,430 Q215,350 225,260" stroke="url(#goldStem)" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <!-- Stem to left leaf -->
+    <path d="M200,430 Q160,380 140,320" stroke="url(#goldStem)" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <!-- Stem to upper leaf -->
+    <path d="M200,400 Q240,280 235,190" stroke="url(#goldStem)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <!-- Stem to small bud -->
+    <path d="M200,420 Q170,360 175,290" stroke="url(#goldStem)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 2. GOLDEN LOTUS LEAVES (LÁ SEN VÀNG)       -->
+  <!-- ========================================== -->
+  <!-- Main Large Golden Lotus Leaf (Bottom Center/Left) -->
+  <g transform="translate(140, 335) rotate(-8)">
+    <!-- Underside leaf shadow -->
+    <ellipse cx="0" cy="0" rx="72" ry="38" fill="url(#goldPetalDeep)"/>
+    <!-- Sculpted scalloped golden leaf face -->
+    <path d="M-68,-5 C-72,15 -45,35 -15,36 C15,37 55,25 68,0 C72,-20 40,-35 0,-36 C-40,-37 -65,-25 -68,-5 Z" 
+          fill="url(#goldLeaf)" stroke="#ffe899" stroke-width="1.5" filter="url(#goldShine)"/>
+    <!-- Lotus leaf radial gold veins -->
+    <path d="M0,0 Q-35,-15 -62,-8 M0,0 Q-45,10 -58,22 M0,0 Q-15,25 -10,35 M0,0 Q25,25 45,26 M0,0 Q50,10 65,-2 M0,0 Q40,-20 50,-30 M0,0 Q10,-28 0,-35 M0,0 Q-25,-25 -38,-30" 
+          stroke="#fff4b8" stroke-width="1.2" opacity="0.85" fill="none"/>
+    <!-- Center dewdrop sparkle -->
+    <circle cx="0" cy="0" r="4.5" fill="#ffffff" filter="url(#royalGlow)"/>
+  </g>
+
+  <!-- Upper Tender Lotus Leaf (Right) -->
+  <g transform="translate(240, 190) rotate(18)">
+    <path d="M-40,0 C-45,15 -10,25 15,20 C35,15 42,-5 35,-15 C20,-22 -15,-20 -35,-10 Z" 
+          fill="url(#goldLeaf)" stroke="#ffe899" stroke-width="1.2"/>
+    <path d="M0,0 Q-25,-5 -35,-8 M0,0 Q20,10 32,16 M0,0 Q25,-10 32,-14" stroke="#fff4b8" stroke-width="1" opacity="0.8" fill="none"/>
+  </g>
+
+  <!-- Small Lotus Bud (Left) -->
+  <g transform="translate(175, 280) rotate(-14)">
+    <!-- Outer bud petals -->
+    <path d="M0,-24 C-12,-10 -10,12 0,18 C10,12 12,-10 0,-24 Z" fill="url(#goldPetalDeep)" stroke="#ffe899" stroke-width="1"/>
+    <!-- Inner bud glow -->
+    <path d="M0,-20 C-6,-8 -5,8 0,14 C5,8 6,-8 0,-20 Z" fill="url(#goldPetalBright)"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 3. MID-LEVEL BLOOMING LOTUS (SEN VÀNG TẦNG GIỮA) -->
+  <!-- ========================================== -->
+  <g transform="translate(225, 245) scale(0.95)">
+    <!-- Outer Layer Petals -->
+    <path d="M-45,8 C-58,-12 -30,-32 -18,-15 Z" fill="url(#goldPetalDeep)" stroke="#ffe899" stroke-width="1"/>
+    <path d="M45,8 C58,-12 30,-32 18,-15 Z" fill="url(#goldPetalDeep)" stroke="#ffe899" stroke-width="1"/>
+    <path d="M-30,12 C-45,2 -20,-28 -8,-10 Z" fill="url(#goldPetalBright)" stroke="#ffe899" stroke-width="1"/>
+    <path d="M30,12 C45,2 20,-28 8,-10 Z" fill="url(#goldPetalBright)" stroke="#ffe899" stroke-width="1"/>
+    
+    <!-- Middle Blooming Petals -->
+    <path d="M-22,14 C-32,-8 0,-38 0,-12 Z" fill="url(#goldPetalBright)" stroke="#fff" stroke-width="0.8"/>
+    <path d="M22,14 C32,-8 0,-38 0,-12 Z" fill="url(#goldPetalBright)" stroke="#fff" stroke-width="0.8"/>
+    <!-- Center Upright Petals -->
+    <path d="M-12,14 C-16,-15 0,-42 0,-15 Z" fill="url(#goldPetalBright)"/>
+    <path d="M12,14 C16,-15 0,-42 0,-15 Z" fill="url(#goldPetalBright)"/>
+    <!-- Central Stamen -->
+    <ellipse cx="0" cy="5" rx="10" ry="7" fill="#ffeaa7" stroke="#b8860b" stroke-width="1"/>
+    <circle cx="0" cy="-2" r="3" fill="#ffffff" filter="url(#royalGlow)"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 4. TOP CROWN LOTUS FLOWER (SEN VÀNG NỞ ĐỈNH) -->
+  <!-- ========================================== -->
+  <g transform="translate(200, 110)" filter="url(#goldShine)">
+    <!-- Behind Petals -->
+    <path d="M-55,10 C-70,-15 -35,-42 -22,-20 Z" fill="url(#goldPetalDeep)" stroke="#ffe899" stroke-width="1.2"/>
+    <path d="M55,10 C70,-15 35,-42 22,-20 Z" fill="url(#goldPetalDeep)" stroke="#ffe899" stroke-width="1.2"/>
+    <path d="M-38,15 C-55,-5 -25,-48 -10,-22 Z" fill="url(#goldPetalBright)" stroke="#ffe899" stroke-width="1.2"/>
+    <path d="M38,15 C55,-5 25,-48 10,-22 Z" fill="url(#goldPetalBright)" stroke="#ffe899" stroke-width="1.2"/>
+    
+    <!-- Left Wing Petals -->
+    <path d="M-26,18 C-40,-12 -8,-52 -4,-25 Z" fill="url(#goldPetalBright)" stroke="#fff" stroke-width="1"/>
+    <!-- Right Wing Petals -->
+    <path d="M26,18 C40,-12 8,-52 4,-25 Z" fill="url(#goldPetalBright)" stroke="#fff" stroke-width="1"/>
+    
+    <!-- Central Majestic Petal -->
+    <path d="M0,20 C-18,-15 0,-60 0,-28 Z" fill="url(#goldPetalBright)" stroke="#fff" stroke-width="1"/>
+    <path d="M0,20 C18,-15 0,-60 0,-28 Z" fill="url(#goldPetalBright)" stroke="#fff" stroke-width="1"/>
+
+    <!-- Front Cup Petals -->
+    <path d="M-18,20 C-26,2 0,-30 0,-6 Z" fill="url(#goldPetalDeep)"/>
+    <path d="M18,20 C26,2 0,-30 0,-6 Z" fill="url(#goldPetalDeep)"/>
+
+    <!-- Gold Stamen Crown -->
+    <ellipse cx="0" cy="10" rx="14" ry="9" fill="url(#goldPetalBright)" stroke="#b8860b" stroke-width="1.5"/>
+    <circle cx="-5" cy="8" r="2.5" fill="#fff"/>
+    <circle cx="0" cy="7" r="3" fill="#fff"/>
+    <circle cx="5" cy="8" r="2.5" fill="#fff"/>
+    <circle cx="0" cy="2" r="5" fill="#ffffff" filter="url(#royalGlow)"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 5. FACETED DIAMOND CRYSTAL PEDESTAL (ĐẾ PHA LÊ) -->
+  <!-- ========================================== -->
+  <g transform="translate(200, 445)">
+    <!-- Golden Stem Connector Ring -->
+    <ellipse cx="0" cy="-14" rx="22" ry="6" fill="url(#goldStem)" stroke="#ffe899" stroke-width="1"/>
+
+    <!-- Crystal Diamond Body (Faceted Prism) -->
+    <!-- Center front facet -->
+    <polygon points="0,-10 -22,6 0,22 22,6" fill="url(#crystalFacet1)" stroke="rgba(255,255,255,0.9)" stroke-width="1.2"/>
+    <!-- Top-left facet -->
+    <polygon points="0,-10 -40,-2 -22,6" fill="url(#crystalFacet2)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
+    <!-- Top-right facet -->
+    <polygon points="0,-10 40,-2 22,6" fill="url(#crystalFacet1)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
+    <!-- Bottom-left facet -->
+    <polygon points="-22,6 -40,-2 0,34 0,22" fill="url(#crystalFacet2)" stroke="rgba(255,255,255,0.8)" stroke-width="1"/>
+    <!-- Bottom-right facet -->
+    <polygon points="22,6 40,-2 0,34 0,22" fill="url(#crystalFacet1)" stroke="rgba(255,255,255,0.8)" stroke-width="1"/>
+
+    <!-- Crystal Core Golden Sparkle -->
+    <circle cx="0" cy="8" r="7" fill="#ffd700" opacity="0.6" filter="url(#royalGlow)"/>
+    <circle cx="0" cy="8" r="3" fill="#ffffff"/>
+
+    <!-- Golden Base Tier -->
+    <path d="M-65,34 L65,34 L55,44 L-55,44 Z" fill="url(#goldStem)" stroke="#ffe899" stroke-width="1.2"/>
+    <ellipse cx="0" cy="44" rx="60" ry="7" fill="url(#goldPetalDeep)"/>
+  </g>
+
+  <!-- Sparkling Light Flashes -->
+  <g filter="url(#royalGlow)">
+    <circle cx="200" cy="55" r="4" fill="#ffffff"/>
+    <circle cx="230" cy="210" r="3.5" fill="#ffe5a3"/>
+    <circle cx="130" cy="315" r="3" fill="#ffffff"/>
+    <circle cx="200" cy="455" r="3.5" fill="#ffffff"/>
+  </g>
+</svg>

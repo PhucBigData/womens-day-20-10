@@ -79,10 +79,10 @@
       this.wingAngle = Math.random() * Math.PI;
       this.colorIndex = Math.floor(Math.random() * 4);
       this.colors = [
-        { primary: '#ffd700', glow: 'rgba(255, 215, 0, 0.9)' },
-        { primary: '#ffb703', glow: 'rgba(255, 183, 3, 0.9)' },
-        { primary: '#ff758f', glow: 'rgba(255, 117, 143, 0.8)' },
-        { primary: '#ffe5a3', glow: 'rgba(255, 229, 163, 0.9)' }
+        { primary: '#ffd700', glow: 'rgba(255, 215, 0, 1)' },     // 24K Brilliant Gold
+        { primary: '#ffea75', glow: 'rgba(255, 234, 117, 0.95)' }, // Light Champagne Gold
+        { primary: '#f39c12', glow: 'rgba(243, 156, 18, 0.9)' },   // Warm Amber Gold
+        { primary: '#ffeaa7', glow: 'rgba(255, 240, 180, 0.95)' }  // Shimmering Gold Dust
       ];
       this.isBursting = false;
     }
@@ -137,25 +137,33 @@
       const c = this.colors[this.colorIndex];
 
       // Wing glow
-      ctx.shadowBlur = 12;
+      ctx.shadowBlur = 15;
       ctx.shadowColor = c.glow;
       ctx.fillStyle = c.primary;
 
       // Left wing
       ctx.beginPath();
-      ctx.ellipse(-s * 0.5 * flap, 0, s * 0.65 * flap, s * 0.95, -0.25, 0, Math.PI * 2);
+      ctx.ellipse(-s * 0.52 * flap, 0, s * 0.68 * flap, s * 0.98, -0.25, 0, Math.PI * 2);
       ctx.fill();
 
       // Right wing
       ctx.beginPath();
-      ctx.ellipse(s * 0.5 * flap, 0, s * 0.65 * flap, s * 0.95, 0.25, 0, Math.PI * 2);
+      ctx.ellipse(s * 0.52 * flap, 0, s * 0.68 * flap, s * 0.98, 0.25, 0, Math.PI * 2);
       ctx.fill();
 
-      // Delicate butterfly body
-      ctx.shadowBlur = 0;
+      // Wing gold glitter highlights
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();
-      ctx.ellipse(0, 0, s * 0.16, s * 0.6, 0, 0, Math.PI * 2);
+      ctx.arc(-s * 0.45 * flap, -s * 0.3, s * 0.16, 0, Math.PI * 2);
+      ctx.arc(s * 0.45 * flap, -s * 0.3, s * 0.16, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Delicate gold butterfly body
+      ctx.shadowBlur = 4;
+      ctx.shadowColor = '#ffffff';
+      ctx.fillStyle = '#fffbe6';
+      ctx.beginPath();
+      ctx.ellipse(0, 0, s * 0.18, s * 0.65, 0, 0, Math.PI * 2);
       ctx.fill();
 
       ctx.restore();
@@ -170,7 +178,7 @@
     reset() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.size = Math.random() * 2.2 + 1;
+      this.size = Math.random() * 2.5 + 1;
       this.alpha = Math.random() * 0.8 + 0.2;
       this.speed = Math.random() * 0.02 + 0.012;
       this.vy = -(Math.random() * 0.5 + 0.2); // Gently floating upwards
@@ -182,9 +190,9 @@
     }
     draw() {
       ctx.save();
-      ctx.fillStyle = `rgba(255, 225, 160, ${this.alpha})`;
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = 'rgba(255, 209, 102, 0.9)';
+      ctx.fillStyle = `rgba(255, 235, 120, ${this.alpha})`;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = 'rgba(255, 215, 0, 1)';
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
