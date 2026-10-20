@@ -87,7 +87,7 @@ function renderContent() {
         <div class="voucher-desc">${v.desc}</div>
         <div class="voucher-code">
           <span>Mã: ${v.code}</span>
-          <button class="redeem-btn" onclick="redeemVoucher('${v.title}')">Đổi thưởng</button>
+          <button class="redeem-btn" id="redeem-btn-${v.id}" onclick="redeemVoucher('${v.title}', '${v.code}', ${v.id})">Đổi thưởng</button>
         </div>
       </div>
     `).join('');
@@ -381,9 +381,49 @@ function triggerConfetti() {
   animate();
 }
 
-function redeemVoucher(title) {
+async function redeemVoucher(title, code, id) {
   triggerConfetti();
-  alert(`🎉 Bé yêu đã kích hoạt thành công: "${title}"!\nAnh đã nhận thông báo và sẽ chuẩn bị thực hiện ngay hôm nay! ❤️`);
+  playTone(659.25, 0.4);
+
+  const btn = document.getElementById(`redeem-btn-${id}`);
+  if (btn) {
+    btn.textContent = 'Đang gửi... ✨';
+    btn.disabled = true;
+  }
+
+  const endpoint = (CONFIG.notification && CONFIG.notification.formspreeEndpoint) ? CONFIG.notification.formspreeEndpoint.trim() : '';
+
+  if (endpoint) {
+    try {
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `🎁 [20/10] Bé yêu vừa chọn: ${title}`,
+          mon_qua: title,
+          ma_voucher: code,
+          nguoi_chon: CONFIG.receiverName || "Em Yêu",
+          biet_danh: CONFIG.nickname || "Công Chúa Nhỏ",
+          thoi_gian: new Date().toLocaleString('vi-VN'),
+          loi_nhan: "Anh nhớ chuẩn bị thực hiện cho bé yêu nhé! ❤️"
+        })
+      });
+      alert(`🎉 Bé yêu đã kích hoạt thành công: "${title}"!\nThông báo đã được gửi trực tiếp đến hộp thư của anh. Anh sẽ chuẩn bị thực hiện ngay cho em! ❤️`);
+    } catch (err) {
+      console.error('Lỗi gửi webhook thông báo:', err);
+      alert(`🎉 Bé yêu đã kích hoạt thành công: "${title}"!\nAnh đã ghi nhận phiếu quà tặng này rồi nhé! ❤️`);
+    }
+  } else {
+    alert(`🎉 Bé yêu đã kích hoạt thành công: "${title}"!\n(Mã: ${code})\nAnh đã nhận được lựa chọn của em và sẽ thực hiện sớm nhất! ❤️`);
+  }
+
+  if (btn) {
+    btn.textContent = 'Đã chọn ❤️';
+    btn.style.background = '#48bb78';
+  }
 }
 
 // --------------------------------------------------------------------------
@@ -540,6 +580,10 @@ function initCustomizerModal() {
       document.getElementById('edit-nickname').value = CONFIG.nickname || '';
       document.getElementById('edit-sender-name').value = CONFIG.senderName || '';
       document.getElementById('edit-start-date').value = (CONFIG.loveStartDate || '').substring(0, 10);
+      const fsInput = document.getElementById('edit-formspree-endpoint');
+      if (fsInput) {
+        fsInput.value = (CONFIG.notification && CONFIG.notification.formspreeEndpoint) ? CONFIG.notification.formspreeEndpoint : '';
+      }
       modal.classList.add('active');
     });
   }
@@ -557,6 +601,12 @@ function initCustomizerModal() {
       const dateVal = document.getElementById('edit-start-date').value;
       if (dateVal) {
         CONFIG.loveStartDate = `${dateVal}T00:00:00`;
+      }
+
+      const fsInput = document.getElementById('edit-formspree-endpoint');
+      if (fsInput) {
+        if (!CONFIG.notification) CONFIG.notification = {};
+        CONFIG.notification.formspreeEndpoint = fsInput.value.trim();
       }
 
       localStorage.setItem('womens_day_config', JSON.stringify(CONFIG));

@@ -103,5 +103,12 @@ const CONFIG = {
     autoPlay: false,
     title: "Giai điệu lãng mạn dành cho em",
     customAudioUrl: ""
+  },
+
+  // Cấu hình thông báo khi người yêu chọn quà
+  // Khi bạn gái nhấn "Đổi thưởng", thông báo sẽ tự động gửi về Email của bạn qua Formspree
+  notification: {
+    enabled: true,
+    formspreeEndpoint: "" // Dán link Formspree của bạn (VD: https://formspree.io/f/xovjkeqq)
   }
 };
