@@ -1,0 +1,140 @@
+<svg class="bouquet-svg" viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="wrapPaper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#800f2f"/>
+      <stop offset="50%" stop-color="#590d22"/>
+      <stop offset="100%" stop-color="#38040e"/>
+    </linearGradient>
+    <linearGradient id="wrapInner" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff0f3"/>
+      <stop offset="100%" stop-color="#ffb3c1"/>
+    </linearGradient>
+    <linearGradient id="goldRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe6a7"/>
+      <stop offset="40%" stop-color="#f4a261"/>
+      <stop offset="80%" stop-color="#e76f51"/>
+      <stop offset="100%" stop-color="#d4af37"/>
+    </linearGradient>
+    <radialGradient id="roseCrimson" cx="40%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#ff758f"/>
+      <stop offset="50%" stop-color="#c9184a"/>
+      <stop offset="100%" stop-color="#590d22"/>
+    </radialGradient>
+    <radialGradient id="rosePink" cx="40%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#fff0f3"/>
+      <stop offset="45%" stop-color="#ff4d6d"/>
+      <stop offset="100%" stop-color="#a4133c"/>
+    </radialGradient>
+    <radialGradient id="roseChampagne" cx="40%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#e07a5f"/>
+    </radialGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#70e000"/>
+      <stop offset="50%" stop-color="#38b000"/>
+      <stop offset="100%" stop-color="#007200"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Aura Glow Behind Bouquet -->
+  <circle cx="170" cy="140" r="130" fill="rgba(255, 77, 109, 0.25)" filter="url(#softGlow)"/>
+
+  <!-- WRAPPING PAPER - BACK -->
+  <path d="M170,360 L75,170 Q170,140 265,170 Z" fill="url(#wrapPaper)" stroke="#ffd166" stroke-width="1.5"/>
+  <path d="M170,355 L88,175 Q170,152 252,175 Z" fill="url(#wrapInner)" opacity="0.9"/>
+
+  <!-- FOLIAGE & LEAVES -->
+  <!-- Left Leaf -->
+  <path d="M90,140 Q60,110 50,80 Q80,95 105,125 Z" fill="url(#leafGrad)"/>
+  <path d="M90,140 Q75,105 50,80" stroke="#b5e48c" stroke-width="1.5" fill="none"/>
+  <!-- Right Leaf -->
+  <path d="M250,140 Q280,110 290,80 Q260,95 235,125 Z" fill="url(#leafGrad)"/>
+  <path d="M250,140 Q265,105 290,80" stroke="#b5e48c" stroke-width="1.5" fill="none"/>
+  <!-- Top Center Leaf -->
+  <path d="M170,90 Q170,40 185,25 Q195,55 170,90 Z" fill="url(#leafGrad)"/>
+
+  <!-- ROSES CLUSTER -->
+  
+  <!-- Rose 1: Top Center (Champagne/Blush) -->
+  <g transform="translate(170, 75)">
+    <circle cx="0" cy="0" r="34" fill="url(#roseChampagne)"/>
+    <path d="M-22,-5 C-28,15 15,30 24,10 C30,-12 5,-28 -15,-20 Z" fill="#ffffff" opacity="0.35"/>
+    <path d="M-15,0 C-18,12 8,20 16,6 C18,-8 0,-18 -10,-12 Z" fill="#e07a5f" opacity="0.6"/>
+    <path d="M-8,0 C-6,7 5,9 8,2 C9,-5 0,-8 -5,-4 Z" fill="#590d22"/>
+  </g>
+
+  <!-- Rose 2: Upper Left (Crimson) -->
+  <g transform="translate(115, 105)">
+    <circle cx="0" cy="0" r="38" fill="url(#roseCrimson)"/>
+    <path d="M-25,-8 C-32,18 16,32 26,12 C32,-14 6,-30 -16,-22 Z" fill="#ff758f" opacity="0.4"/>
+    <path d="M-16,0 C-20,12 10,22 18,8 C20,-10 0,-20 -10,-14 Z" fill="#c9184a" opacity="0.8"/>
+    <path d="M-8,0 C-7,8 6,10 9,3 C10,-6 0,-10 -6,-5 Z" fill="#38040e"/>
+  </g>
+
+  <!-- Rose 3: Upper Right (Pink Velvet) -->
+  <g transform="translate(225, 105)">
+    <circle cx="0" cy="0" r="38" fill="url(#rosePink)"/>
+    <path d="M-26,-8 C-32,18 16,32 26,12 C32,-14 6,-30 -16,-22 Z" fill="#fff0f3" opacity="0.45"/>
+    <path d="M-18,0 C-22,12 10,22 18,8 C20,-10 0,-20 -12,-14 Z" fill="#a4133c" opacity="0.8"/>
+    <path d="M-8,0 C-7,8 6,10 9,3 C10,-6 0,-10 -6,-5 Z" fill="#38040e"/>
+  </g>
+
+  <!-- Rose 4: Center Focal Rose (Deep Crimson - Large) -->
+  <g transform="translate(170, 135)">
+    <circle cx="0" cy="0" r="42" fill="url(#roseCrimson)" filter="url(#softGlow)"/>
+    <circle cx="0" cy="0" r="40" fill="url(#roseCrimson)"/>
+    <path d="M-28,-10 C-36,20 18,36 30,14 C36,-16 8,-34 -18,-24 Z" fill="#ff758f" opacity="0.5"/>
+    <path d="M-20,0 C-24,14 12,24 20,8 C22,-12 0,-22 -12,-15 Z" fill="#ff4d6d" opacity="0.8"/>
+    <path d="M-10,0 C-8,9 8,11 11,4 C12,-7 0,-11 -7,-6 Z" fill="#2b000a"/>
+  </g>
+
+  <!-- Rose 5: Lower Left (Peach/Pink) -->
+  <g transform="translate(125, 168)">
+    <circle cx="0" cy="0" r="32" fill="url(#rosePink)"/>
+    <path d="M-20,-5 C-25,12 14,24 22,8 C26,-10 4,-24 -12,-16 Z" fill="#ffffff" opacity="0.4"/>
+    <path d="M-12,0 C-15,8 8,15 14,5 C15,-6 0,-14 -8,-10 Z" fill="#800f2f"/>
+  </g>
+
+  <!-- Rose 6: Lower Right (Champagne) -->
+  <g transform="translate(215, 168)">
+    <circle cx="0" cy="0" r="32" fill="url(#roseChampagne)"/>
+    <path d="M-20,-5 C-25,12 14,24 22,8 C26,-10 4,-24 -12,-16 Z" fill="#ffffff" opacity="0.45"/>
+    <path d="M-12,0 C-15,8 8,15 14,5 C15,-6 0,-14 -8,-10 Z" fill="#c9184a"/>
+  </g>
+
+  <!-- WRAPPING PAPER - FRONT FLAPS (CONICAL WRAP) -->
+  <!-- Left Flap Fold -->
+  <path d="M170,360 L90,195 Q140,210 170,225 Z" fill="url(#wrapPaper)" stroke="#ffd166" stroke-width="1.2"/>
+  <!-- Right Flap Fold overlapping -->
+  <path d="M170,360 L250,195 Q200,210 165,225 Z" fill="url(#wrapPaper)" stroke="#ffd166" stroke-width="1.2"/>
+
+  <!-- LUXURY GOLDEN SATIN RIBBON BOW -->
+  <g transform="translate(170, 240)">
+    <!-- Left Ribbon Loop -->
+    <path d="M0,0 C-25,-30 -60,-20 -50,5 C-40,25 -10,10 0,0 Z" fill="url(#goldRibbon)" stroke="#ffd166" stroke-width="1.5"/>
+    <!-- Right Ribbon Loop -->
+    <path d="M0,0 C25,-30 60,-20 50,5 C40,25 10,10 0,0 Z" fill="url(#goldRibbon)" stroke="#ffd166" stroke-width="1.5"/>
+    <!-- Left Ribbon Tail -->
+    <path d="M-5,5 Q-35,60 -45,115 Q-30,95 -20,110 Q-5,60 0,5 Z" fill="url(#goldRibbon)"/>
+    <!-- Right Ribbon Tail -->
+    <path d="M5,5 Q35,60 45,115 Q30,95 20,110 Q5,60 0,5 Z" fill="url(#goldRibbon)"/>
+    <!-- Center Knot -->
+    <ellipse cx="0" cy="0" rx="12" ry="10" fill="#ffd166" stroke="#b08968" stroke-width="1"/>
+  </g>
+
+  <!-- SPARKLE PARTICLES AROUND BOUQUET -->
+  <circle cx="80" cy="90" r="3" fill="#ffe6a7" filter="url(#softGlow)"/>
+  <circle cx="270" cy="90" r="2.5" fill="#ffe6a7" filter="url(#softGlow)"/>
+  <circle cx="170" cy="30" r="3.5" fill="#ffd166" filter="url(#softGlow)"/>
+  <circle cx="95" cy="220" r="2" fill="#fff" filter="url(#softGlow)"/>
+  <circle cx="245" cy="220" r="2.5" fill="#fff" filter="url(#softGlow)"/>
+</svg>
