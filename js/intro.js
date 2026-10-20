@@ -79,10 +79,10 @@
       this.wingAngle = Math.random() * Math.PI;
       this.colorIndex = Math.floor(Math.random() * 4);
       this.colors = [
-        { primary: '#ff4d6d', glow: 'rgba(255, 77, 109, 0.8)' },
-        { primary: '#ffd166', glow: 'rgba(255, 209, 102, 0.8)' },
+        { primary: '#ffd700', glow: 'rgba(255, 215, 0, 0.9)' },
+        { primary: '#ffb703', glow: 'rgba(255, 183, 3, 0.9)' },
         { primary: '#ff758f', glow: 'rgba(255, 117, 143, 0.8)' },
-        { primary: '#ffb3c1', glow: 'rgba(255, 179, 193, 0.8)' }
+        { primary: '#ffe5a3', glow: 'rgba(255, 229, 163, 0.9)' }
       ];
       this.isBursting = false;
     }
