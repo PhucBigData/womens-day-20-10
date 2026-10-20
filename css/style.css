@@ -1131,3 +1131,108 @@ footer .footer-heart {
     font-size: 2.2rem;
   }
 }
+
+/* ==========================================================================
+   BUTTERFLY INTRO OVERLAY & MORPHING EXPERIENCE
+   ========================================================================== */
+#intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background: #0f050a;
+  overflow: hidden;
+  transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.9s ease;
+}
+
+#intro-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#intro-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.intro-skip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.intro-skip:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.intro-ui-container {
+  position: absolute;
+  bottom: 11%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 10;
+  width: 90%;
+  max-width: 420px;
+  pointer-events: auto;
+}
+
+.intro-btn {
+  display: none;
+  width: 100%;
+  padding: 16px 28px;
+  font-size: clamp(1rem, 3.8vw, 1.2rem);
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff4d6d 0%, #c9184a 100%);
+  box-shadow: 0 0 25px rgba(255, 77, 109, 0.6);
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.intro-btn.visible {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: introPulse 2s infinite;
+}
+
+.intro-btn.love-btn {
+  background: linear-gradient(135deg, #ffd166 0%, #ff758f 100%);
+  color: #590d22;
+  box-shadow: 0 0 35px rgba(255, 209, 102, 0.7);
+}
+
+@keyframes introPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(255, 77, 109, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0); }
+}

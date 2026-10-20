@@ -21,6 +21,25 @@
 </head>
 <body>
 
+  <!-- BUTTERFLY INTRO OVERLAY -->
+  <div id="intro-overlay">
+    <canvas id="intro-canvas"></canvas>
+    
+    <button id="skip-intro-btn" class="intro-skip" title="Bỏ qua màn chào">
+      Bỏ qua ✕
+    </button>
+
+    <div class="intro-ui-container">
+      <button id="receive-flower-btn" class="intro-btn glow-btn">
+        <span>Nhận Bó Hoa Tình Yêu 💐</span>
+      </button>
+
+      <button id="enter-site-btn" class="intro-btn glow-btn love-btn">
+        <span>Khám Phá Món Quà 20/10 Của Anh 💌</span>
+      </button>
+    </div>
+  </div>
+
   <!-- Floating Canvas for Rose Petals & Floating Hearts -->
   <canvas id="effects-canvas"></canvas>
 
@@ -249,5 +268,6 @@
   <!-- Scripts -->
   <script src="js/config.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/intro.js"></script>
 </body>
 </html>
